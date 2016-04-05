@@ -1,0 +1,34 @@
+{% extends 'soma.html' %}
+
+{% block style-css %}
+<link rel="stylesheet" type="text/css" href="{{ static_url('css/book.css') }}" />
+{% end %}
+
+{% block mainbody %}
+<div id='booktext'>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <img src="{{ static_url('images/book-text.png') }}" />
+    <br /><br /><br />
+</div>
+<div id="recommend">
+    <img id="lbtn" src="{{ static_url('images/left.png') }}" />
+    <span>
+        {% for book in books %}
+        <a href="{{ book['url'] }}" class="address">
+            <img src="{{ static_url('images/books') }}/{{ book['img'] }}" class="bookimg" alt="{{ book['alt'] }}" />
+        </a>
+        {% end %}
+    </span>
+    <img id="rbtn" src="{{ static_url('images/right.png') }}" />
+</div>
+<div id="book-bottom">
+    <br />
+    <img src="{{ static_url('images/book-bottom0.gif') }}" alt="book-bootom-img" />
+    <img src="{{ static_url('images/book-bottom1.gif') }}" alt="book-bootom-img" />
+    <span>
+        <img src="{{ static_url('images/book-bottom1.gif') }}" alt="book-bootom-img" />
+        <img src="{{ static_url('images/book-bottom0.gif') }}" alt="book-bootom-img" />
+    </span>
+    <br />
+</div>
+{% end %}

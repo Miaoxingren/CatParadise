@@ -1,0 +1,63 @@
+#main * {
+    text-decoration: none;
+}
+
+
+@font-face {
+    font-family: MixTitanica;
+    src: url('/static/fonts/MixTitanica.ttf') format('truetype');
+}
+
+.foot {
+    background-color: #FAFAFA;
+    font-size: 1.2em;
+    padding: 2.5% 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#main .navbar {
+    background-color: transparent;
+}
+#main .navbar button {
+    background-color: transparent;
+}
+#navigator-h > ul > li {
+    padding: 1rem 2.5rem 1rem 2.5rem;
+}
+
+#navigator-h > ul > li > a {
+    font-size: 1.4em;
+    color: #FFF;
+}
+
+@media screen and (max-width: 960px) {
+    #main {
+        font-size: 1.2em;
+        font-family: MixTitanica, Arial, sans-serif;
+    }
+    .navbar-header > a.navbar-brand {
+        margin-top: -5px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #main {
+        font-size: 1.5em;
+        font-family: MixTitanica, Arial, sans-serif;
+    }
+    .navbar-header > a.navbar-brand {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 4em;
+    }
+}
+
+.navbar-bg {
+    color: #000;
+    background-color: #FFF;
+}
+.navbar-bg #navigator-h > ul > li > a {
+    color: #000;
+}

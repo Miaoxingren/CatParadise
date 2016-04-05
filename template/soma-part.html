@@ -1,0 +1,15 @@
+{% extends 'soma.html' %}
+
+{% block mainbody %}
+<div class='funnycat soma-part-title'>
+    <span>
+        <img src="{{ static_url('images/funnycats') }}/{{ soma_part['funnycat'] }}" alt="funnycat" />
+    </span>
+    <img src="{{ static_url('images/body') }}/{{ soma_part['title'] }}" alt="soma-part-title" />
+</div>
+<div class='soma-detail'>
+    {% for img in soma_part['details'] %}
+    <img src="{{ static_url('images/body') }}/{{ img }}" alt="soma-part" />
+    {% end %}
+</div>
+{% end %}

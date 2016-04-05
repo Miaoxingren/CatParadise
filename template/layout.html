@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Paradise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="icon" href="{{ static_url('images/favicon.png') }}">
+    <!--[if IE]><link rel="shortcut icon" href="{{ static_url('images/favicon.ico') }}"><![endif]-->
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/layout.css') }}">
+    <script src="{{ static_url('js/jquery.min.js') }}"></script>
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    <script src="{{ static_url('js/layout.js') }}"></script>
+    {% block styles %}
+    {% end %}
+    {% block scripts %}
+    {% end %}
+</head>
+
+<body>
+    <div id="main">
+        <h1 class="sr-only">Everything funny about cat | Cat Paradise</h1>
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigator-h" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img alt="logo" src="{{ static_url('images/logo-32-light.png') }}" />
+                        <span class="sr-only">Cat Paradise</span>
+                    </a>
+                </div>
+
+                <nav class="collapse navbar-collapse" id="navigator-h">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#history">HISTORY</a></li>
+                        <li><a href="#star">STAR</a></li>
+                        <li><a href="#music">MUSIC</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </header>
+
+        {% block maincontent %}
+        {% end %}
+
+        <footer>
+            <div class="foot">
+                <span>Copyright © 2016</span>
+                <img alt="logo" src="{{ static_url('images/logo-32.png') }}" />
+                <span class="sr-only">Cat Paradise</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

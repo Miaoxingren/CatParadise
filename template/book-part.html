@@ -1,0 +1,21 @@
+{% extends 'book.html' %}
+
+{% block mainbody %}
+<div class="book">
+    <p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+    <div class="book-img">
+        <img src="{{ static_url('images/books') }}/{{ book['img'] }}" />
+    </div>
+    <p class="book-title"><a href="{{ book['link'] }}">{{ book['title'] }}</a></p>
+    <div class="book-details">
+        <p>内容推荐：</p>
+        <p>{{ book['detail'] }}</p>
+    </div>
+    <div class="book-star">
+        <span><img src="{{ static_url('images/star.png') }}" /></span>
+        {% for star in range(book['star']) %}
+        <img src="{{ static_url('images/catfood.png') }}" />
+        {% end %}
+    </div>
+</div>
+{% end %}

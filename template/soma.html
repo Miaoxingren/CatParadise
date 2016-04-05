@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% autoescape None %}
+
+{% block style-css %}
+<link rel="stylesheet" type="text/css" href="{{ static_url('css/soma.css') }}" />
+{% end %}
+
+{% block script-js %}
+{% end %}
+
+{% block mainbody %}
+<div id="soma-cat">
+    {% for funnycat in funnycats %}
+    <div class="funnycat">
+        {% for funnycatx in funnycat %}
+        <span><img src="{{ static_url('images/funnycats') }}/{{ funnycatx }}" alt="funnycat" /></span>
+        {% end %}
+    </div>
+    {% end %}
+</div>
+<div id="soma-all">
+    <p><br /><br />喵星人求抚摸ヾ(*´▽‘*)╯<br /><br /></p>
+    <img src="{{ static_url('images/body/body.png') }}" usemap="#soma-map" alt="soma-all" />
+    <map name="soma-map" id="soma-map">
+        {% for bodyarea in bodyareas %}
+        <area shape="rect" coords='{{ bodyarea['coordinate']}}' href ="{{ bodyarea['url'] }}"></area>
+        {% end %}
+    </map>
+</div>
+{% end %}
+{% block bottom %}
+<div class="back">
+    <a href="{{ back_url }}"><img src="{{ static_url('images/back.png') }}" alt="backbutton" /></a>
+</div>
+<div id="placeholder0">&nbsp;</div>
+{% end %}
