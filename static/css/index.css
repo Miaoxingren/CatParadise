@@ -232,7 +232,7 @@
 
 @media screen and (min-width: 960px) {
     #cat-description .cat-article article {
-        width: 75%;
+        width: 75%; 
     }
 }
 
