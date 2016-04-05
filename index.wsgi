@@ -73,20 +73,17 @@ class SomaPartHandler(tornado.web.RequestHandler):
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        #hotcats = data.gethotcats()
         self.render('index.html')
 
-settings = {
-    "template_path": os.path.join(os.path.dirname(__file__), "template"),
-    "static_path": os.path.join(os.path.dirname(__file__), "static")
-}
+
 
 app = tornado.web.Application(
     handlers=[
         (r"/", IndexHandler), (r"/soma", SomaHandler),
         (r"/soma/(\w+)", SomaPartHandler), (r'/book', BookHandler),
         (r"/book/(\w+)", BookPartHandler), (r'.*', ErrorHandler)],
-    **settings
+    template_path=os.path.join(os.path.dirname(__file__), "template"),
+    static_path=os.path.join(os.path.dirname(__file__), "static")
     )
 
 application = sae.create_wsgi_app(app)
