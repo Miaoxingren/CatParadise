@@ -76,14 +76,13 @@ class IndexHandler(tornado.web.RequestHandler):
         self.render('index.html')
 
 
-
-app = tornado.web.Application(
+app = tornado.wsgi.WSGIApplication(
     handlers=[
-        (r"/", IndexHandler), (r"/soma", SomaHandler),
-        (r"/soma/(\w+)", SomaPartHandler), (r'/book', BookHandler),
-        (r"/book/(\w+)", BookPartHandler), (r'.*', ErrorHandler)],
-    template_path=os.path.join(os.path.dirname(__file__), "template"),
-    static_path=os.path.join(os.path.dirname(__file__), "static")
-    )
+            (r"/", IndexHandler), (r"/soma", SomaHandler),
+            (r"/soma/(\w+)", SomaPartHandler), (r'/book', BookHandler),
+            (r"/book/(\w+)", BookPartHandler), (r'.*', ErrorHandler)],
+        template_path=os.path.join(os.path.dirname(__file__), "template"),
+        static_path=os.path.join(os.path.dirname(__file__), "static")
+)
 
 application = sae.create_wsgi_app(app)
