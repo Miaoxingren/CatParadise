@@ -77,10 +77,10 @@ class IndexHandler(tornado.web.RequestHandler):
         self.render('index.html')
 
 settings = {
-    "debug": True,
     "template_path": os.path.join(os.path.dirname(__file__), "template"),
     "static_path": os.path.join(os.path.dirname(__file__), "static")
-    }
+}
+
 app = tornado.web.Application(
     handlers=[
         (r"/", IndexHandler), (r"/soma", SomaHandler),
